@@ -1,38 +1,19 @@
-/* Center the entire container*/
-/* body{
-    top: 256px;
-      left: 40px;
-      width: 517px;
-} */
- .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height:100%;
-    width: 100%;
-    background-color:white;
+
+.container {
+    max-width: 1500px;
+    margin: 20px auto;
     padding: 20px;
-  } 
-  
-  /* Form box with shadow and padding */
-  .form-box {
-   height: auto;
-    width: auto;
-    background: white;
-    padding: 30px;
+    background-color: #f4f4f9;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
  
-  
-  /* Header section */
+  /* Header section (logo part)*/
   .header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       margin-bottom: 20px;
-      top: 256px;
+      top: 200px;
       left: 40px;
       width: 517px;
       height: 145px;
@@ -110,61 +91,101 @@
     margin-bottom: 10px;
   }
   
-  /* Services grid */
-  .services-grid {
-    width:100%;
-    height:300px;
-    /* display: flex;
-    text-align: end;
-    justify-content: right; */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px; 
-   
-    margin-top: 10px;
-    
-  }
-  
+
+ 
+/* Services grid*/
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-left: 5px; /* Reduce left margin */
+}
   /* Individual service card */
   .service-card {
-    background: #112949;
+    background-color: #112949;
     color: white;
-    padding: 15px;
+    padding: 9px;
     border-radius: 10px;
-    text-align: left;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+   
   }
-  
-  /* Service title */
+  .service-header {
+    display: flex;
+    align-items:start; 
+    gap: 5px; /* Add spacing between image and title */
+  }
+  .service-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right:5px;
+  }
   .service-title {
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin: 0;
+    color: #00aaff;
+    display: inline-block; 
   }
   
-  /* Service description */
+  
+  .service-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start; /* Aligns content to the start */
+    /* justify-content: center; Aligns items at the start */
+  }
+  
   .service-description {
+    margin-top: 10px;
     font-size: 14px;
+    color: #ddd;
+    line-height: 1.4;
+    margin-bottom: 0; /* Remove any bottom margin */
+    overflow-wrap: break-word; /* Prevents overflow */
   }
   
-  /* Responsive design */
-  @media (max-width: 1024px) {
+  
+  
+  /* Responsive Design */
+@media (max-width: 480px) { /* Mobile View */
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .title, .subtitle, .description {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+  }
+  
+  @media (max-width: 720px) { /* Small tablets */
+    .services-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .container {
+      margin: 10px;
+      padding: 10px;
+    }
+   
+    
+  }
+  
+  @media (max-width: 1080px) { /* Standard laptops */
     .services-grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
   
-  @media (max-width: 768px) {
-    .services-grid {
-      grid-template-columns: repeat(1, 1fr);
-    }
-  
-    .form {
-      flex-direction: column;
-    }
-  
-    .input {
-      width: 100%;
+  @media (max-width: 1440px) { /* MacBook */
+    .container {
+      padding: 15px;
     }
   }
-   
+  
+  @media (min-width: 1441px) { /* Larger screens */
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  

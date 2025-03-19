@@ -177,8 +177,15 @@
 
 // export default FormComponent;
 import React, { useState } from "react";
-
 import "./FormComponent.css";
+import img1 from "../assets/2.png";
+import img2 from "../assets/3.png";
+import img3 from "../assets/4.png";
+import img4 from "../assets/5.png";
+import img5 from "../assets/6.png";
+import img6 from "../assets/7.png";
+
+
 
 
 const FormComponent = () => {
@@ -265,21 +272,25 @@ const FormComponent = () => {
         </div>
         <div className="services-grid">
           {[
-             { title: "Presentation Design", img: "/assets/2.png" },
-             { title: "Audio - Visual Production", img: "/aeests/3.png" },
-             { title: "Translation Services", img: "/images/translation.png" },
-             { title: "Graphic Design", img: "/images/graphic-design.png" },
-             { title: "Research & Analytics", img: "/images/research.png" },
-             { title: "Data Processing", img: "/images/data-processing.png" },
+             { title: "Presentation Design", img: img1 },
+             { title: "Audio - Visual Production", img: img2},
+             { title: "Translation Services", img: img3 },
+             { title: "Graphic Design", img: img4},
+             { title: "Research & Analytics", img: img5},
+             { title: "Data Processing", img: img6},
           ] .map((service, index) => (
             <div key={index} className="service-card">
-              <img src={service.img} alt={service.title} className="service-image" />
+              <div className="service-header">
+              <img src={service.img} alt={service.title} className="service-image" /><br />
               <h3 className="service-title">{service.title}</h3>
-              <p className="service-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-            </div>
-          ))}
+              </div>
+              <div className="service-info">
+                {/* <h3 className="service-title">{service.title}</h3><br></br> */}
+                <p className="service-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+             
+              </div>
+              </div>        
+              ))}
        
       </div>
     </div>
